@@ -19,6 +19,13 @@ This style was mostly made for fun, and aims to improve and extend the original 
 ![meadow and grass](img/meadow-grass.png)
 
 - Unpaved filter for turning circles
+- Blue road casing for motorroads and purple for tolled roads (dark pink for combined)
+
+![colored casings](img/toll-motorroad.png)
+
+- Dark purple for high-speed rail
+
+![highspeed](img/highspeed.png)
 
 This style is still in very early devloppement and will change a lot over time!
 

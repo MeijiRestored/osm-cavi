@@ -463,7 +463,10 @@ Layer:
             service,
             link,
             preserved,
-            layernotnull
+            layernotnull,
+            toll,
+            motorroad,
+            highspeed
           FROM ( -- subselect that contains both roads and rail
             SELECT
                 way,
@@ -486,6 +489,9 @@ Layer:
                 END AS link,
                 NULL AS preserved,
                 COALESCE(layer,0) AS layernotnull,
+                tags->'toll' AS toll,
+                tags->'motorroad' AS motorroad,
+                NULL AS highspeed,
                 osm_id,
                 z_order
               FROM planet_osm_line
@@ -509,6 +515,9 @@ Layer:
                   ELSE 'no'
                 END AS preserved,
                 COALESCE(layer,0) AS layernotnull,
+                NULL AS toll,
+                NULL AS motorroad,
+                tags->'highspeed' AS highspeed,
                 osm_id,
                 z_order
               FROM planet_osm_line
@@ -709,7 +718,10 @@ Layer:
             service,
             link,
             preserved,
-            layernotnull
+            layernotnull,
+            toll,
+            motorroad,
+            highspeed
           FROM ( -- subselect that contains both roads and rail/aero
             SELECT
                 way,
@@ -732,6 +744,9 @@ Layer:
                 END AS link,
                 NULL AS preserved,
                 COALESCE(layer,0) AS layernotnull,
+                tags->'toll' AS toll,
+                tags->'motorroad' AS motorroad,
+                NULL AS highspeed,
                 osm_id,
                 z_order
               FROM planet_osm_line
@@ -757,6 +772,9 @@ Layer:
                   ELSE 'no'
                 END AS preserved,
                 COALESCE(layer,0) AS layernotnull,
+                NULL AS toll,
+                NULL AS motorroad,
+                tags->'highspeed' AS highspeed,
                 osm_id,
                 z_order
               FROM planet_osm_line
@@ -937,7 +955,10 @@ Layer:
             service,
             link,
             preserved,
-            layernotnull
+            layernotnull,
+            motorroad,
+            toll,
+            highspeed
           FROM ( -- subselect that contains both roads and rail/aero
             SELECT
                 way,
@@ -960,6 +981,9 @@ Layer:
                 END AS link,
                 NULL AS preserved,
                 COALESCE(layer,0) AS layernotnull,
+                tags->'toll' AS toll,
+                tags->'motorroad' AS motorroad,
+                NULL AS highspeed,
                 osm_id,
                 z_order
               FROM planet_osm_line
@@ -983,6 +1007,9 @@ Layer:
                   ELSE 'no'
                 END AS preserved,
                 COALESCE(layer,0) AS layernotnull,
+                NULL AS toll,
+                NULL AS motorroad,
+                tags->'highspeed' AS highspeed,
                 osm_id,
                 z_order
               FROM planet_osm_line
